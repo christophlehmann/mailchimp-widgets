@@ -15,7 +15,6 @@ services:
   dashboard.widget.mailchimpMessages:
     class: 'Lemming\MailchimpWidgets\Widgets\MessagesWidget'
     arguments:
-      $view: '@dashboard.views.widget'
       $apiClient: '@mailchimp.widgets.apiClient'
     tags:
       - name: dashboard.widget
@@ -30,7 +29,6 @@ services:
   dashboard.widget.mailchimpRejects:
     class: 'Lemming\MailchimpWidgets\Widgets\RejectsWidget'
     arguments:
-      $view: '@dashboard.views.widget'
       $apiClient: '@mailchimp.widgets.apiClient'
       $table: 'fe_users'
       $field: 'email'
