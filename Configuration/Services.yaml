@@ -1,0 +1,45 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+  Lemming\MailchimpWidgets\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+  mailchimp.widgets.apiClient:
+    class: 'MailchimpTransactional\ApiClient'
+    public: true
+    factory: ['Lemming\MailchimpWidgets\Factory\MailchimpFactory', 'getApiClient']
+
+  dashboard.widget.mailchimpMessages:
+    class: 'Lemming\MailchimpWidgets\Widgets\MessagesWidget'
+    arguments:
+      $view: '@dashboard.views.widget'
+      $apiClient: '@mailchimp.widgets.apiClient'
+    tags:
+      - name: dashboard.widget
+        identifier: 'mailchimpMessages'
+        groupNames: 'mailchimp'
+        title: 'LLL:EXT:mailchimp_widgets/Resources/Private/Language/locallang.xlf:widget.messages.title'
+        description: 'LLL:EXT:mailchimp_widgets/Resources/Private/Language/locallang.xlf:widget.messages.description'
+        iconIdentifier: 'content-widget'
+        height: 'medium'
+        width: 'large'
+
+  dashboard.widget.mailchimpRejects:
+    class: 'Lemming\MailchimpWidgets\Widgets\RejectsWidget'
+    arguments:
+      $view: '@dashboard.views.widget'
+      $apiClient: '@mailchimp.widgets.apiClient'
+      $table: 'fe_users'
+      $field: 'email'
+    tags:
+      - name: dashboard.widget
+        identifier: 'mailchimpRejects'
+        groupNames: 'mailchimp'
+        title: 'LLL:EXT:mailchimp_widgets/Resources/Private/Language/locallang.xlf:widget.rejects.title'
+        description: 'LLL:EXT:mailchimp_widgets/Resources/Private/Language/locallang.xlf:widget.rejects.description'
+        iconIdentifier: 'content-widget'
+        height: 'medium'
+        width: 'large'

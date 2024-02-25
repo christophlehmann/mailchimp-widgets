@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2017-03-10T14:48:08Z" product-name="mailchimp_widgets">
+        <header/>
+        <body>
+            <trans-unit id="dashboard.mailchimp_widgets.description">
+                <source>Messages and delivery issues.</source>
+            </trans-unit>
+
+            <trans-unit id="widget.rejects.title">
+                <source>Delivery issues</source>
+            </trans-unit>
+            <trans-unit id="widget.rejects.description">
+                <source>Recipients with temporary/permanent delivery issues</source>
+            </trans-unit>
+            <trans-unit id="widget.rejects.long_description">
+                <source>Soft bounces typically indicate a temporary delivery issue. Hard bounces indicate a permanent reason an email can't be delivered, you should stop sending mails to them.</source>
+            </trans-unit>
+            <trans-unit id="widget.messages.title">
+                <source>Last 7 days</source>
+            </trans-unit>
+            <trans-unit id="widget.messages.description">
+                <source>Maximum 1000 messages in the last 7 days.</source>
+            </trans-unit>
+
+            <trans-unit id="id">
+                <source>Id</source>
+            </trans-unit>
+            <trans-unit id="reason">
+                <source>Reason</source>
+            </trans-unit>
+            <trans-unit id="email">
+                <source>E-Mail</source>
+            </trans-unit>
+            <trans-unit id="sender">
+                <source>Sender</source>
+            </trans-unit>
+            <trans-unit id="subject">
+                <source>Subject</source>
+            </trans-unit>
+            <trans-unit id="status">
+                <source>Status</source>
+            </trans-unit>
+            <trans-unit id="recipient">
+                <source>Recipient</source>
+            </trans-unit>
+            <trans-unit id="details">
+                <source>Details</source>
+            </trans-unit>
+            <trans-unit id="created_at">
+                <source>Created at</source>
+            </trans-unit>
+            <trans-unit id="expired_at">
+                <source>Expired at</source>
+            </trans-unit>
+            <trans-unit id="sent_at">
+                <source>Sent at</source>
+            </trans-unit>
+            <trans-unit id="last_event_at">
+                <source>Last event</source>
+            </trans-unit>
+            <trans-unit id="subaccount">
+                <source>Subaccount</source>
+            </trans-unit>
+            <trans-unit id="no_items">
+                <source>None found.</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

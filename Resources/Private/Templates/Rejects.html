@@ -1,0 +1,45 @@
+<div class="widget-content-title"><span><f:translate key="{configuration.title}"/></span></div>
+<p style="padding: 10px"><f:translate key="LLL:EXT:mailchimp_widgets/Resources/Private/Language/locallang.xlf:widget.rejects.long_description"/></p>
+<div style="overflow: scroll">
+    <table class="widget-table">
+        <tr>
+            <th><f:translate key="LLL:EXT:mailchimp_widgets/Resources/Private/Language/locallang.xlf:reason"/></th>
+            <th><f:translate key="LLL:EXT:mailchimp_widgets/Resources/Private/Language/locallang.xlf:email"/></th>
+            <th><f:translate key="LLL:EXT:mailchimp_widgets/Resources/Private/Language/locallang.xlf:details"/></th>
+            <th><f:translate key="LLL:EXT:mailchimp_widgets/Resources/Private/Language/locallang.xlf:created_at"/></th>
+            <th><f:translate key="LLL:EXT:mailchimp_widgets/Resources/Private/Language/locallang.xlf:expired_at"/></th>
+            <th><f:translate key="LLL:EXT:mailchimp_widgets/Resources/Private/Language/locallang.xlf:last_event_at"/></th>
+            <th><f:translate key="LLL:EXT:mailchimp_widgets/Resources/Private/Language/locallang.xlf:subaccount"/></th>
+        </tr>
+        <tbody>
+            <f:if condition="{items.0}">
+                <f:then>
+                    <f:for each="{items}" as="item">
+                        <tr>
+                            <td>{item.reason}</td>
+                            <td>
+                                <f:if condition="{item.editUri}">
+                                    <f:then>
+                                        <a href="{item.editUri}">{item.email}</a>
+                                    </f:then>
+                                    <f:else>
+                                        {item.email}
+                                    </f:else>
+                                </f:if>
+                            </td>
+                            <td>{item.detail}</td>
+                            <td>{item.created_at}</td>
+                            <td>{item.expires_at}</td>
+                            <td>{item.last_event_at}</td>
+                            <td>{item.subaccount}</td>
+                        </tr>
+                    </f:for>
+                </f:then>
+                <f:else>
+                    <tr><td colspan="7"><f:translate key="LLL:EXT:mailchimp_widgets/Resources/Private/Language/locallang.xlf:no_items"/></td></tr>
+                </f:else>
+            </f:if>
+        </tbody>
+    </table>
+</div>
+

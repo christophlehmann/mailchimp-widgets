@@ -1,0 +1,26 @@
+{
+    "name": "christophlehmann/mailchimp-widgets",
+    "description": "Widgets for Mailchimp",
+    "type": "typo3-cms-extension",
+    "keywords": [
+        "mailchimp",
+        "widget"
+    ],
+    "license": [
+        "GPL-2.0-or-later"
+    ],
+    "require": {
+        "typo3/cms-core": "^11.5 || ^12.4 || ^13.0",
+        "mailchimp/transactional": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lemming\\MailchimpWidgets\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "mailchimp_widgets"
+        }
+    }
+}
