@@ -1,6 +1,6 @@
 {
     "name": "christophlehmann/mailchimp-widgets",
-    "description": "Widgets for Mailchimp",
+    "description": "Mailchimp Widgets for TYPO3",
     "type": "typo3-cms-extension",
     "keywords": [
         "mailchimp",
