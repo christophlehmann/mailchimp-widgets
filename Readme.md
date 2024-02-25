@@ -1,6 +1,6 @@
 # Mailchimp Widgets for TYPO3
 
-Dashboards included:
+Widgets included:
 * Last messages
 * Delivery issues: Recipients and details about their delivery issues
 
