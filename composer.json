@@ -10,8 +10,10 @@
         "GPL-2.0-or-later"
     ],
     "require": {
-        "typo3/cms-core": "^11.5 || ^12.4 || ^13.0",
-        "mailchimp/transactional": "^1.0"
+        "mailchimp/transactional": "^1.0",
+        "typo3/cms-core": "^11.5 || ^12.4",
+        "typo3/cms-dashboard": "^11.5 || ^12.4",
+        "typo3/cms-fluid": "^11.5 || ^12.4"
     },
     "autoload": {
         "psr-4": {
@@ -20,7 +22,26 @@
     },
     "extra": {
         "typo3/cms": {
-            "extension-key": "mailchimp_widgets"
+            "extension-key": "mailchimp_widgets",
+            "web-dir": ".Build/public"
         }
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.10",
+        "typo3/coding-standards": "^0.7.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "typo3/cms-composer-installers": true,
+            "typo3/class-alias-loader": true
+        },
+        "bin-dir": ".Build/bin",
+        "sort-packages": true,
+        "vendor-dir": ".Build/vendor"
+    },
+    "scripts": {
+        "phpstan": [
+            "phpstan analyze --level 5 ."
+        ]
     }
 }

@@ -13,8 +13,7 @@ class MessagesWidget implements WidgetInterface
         private readonly WidgetConfigurationInterface $configuration,
         private StandaloneView $view,
         private ApiClient $apiClient
-    ) {
-    }
+    ) {}
 
     public function renderWidgetContent(): string
     {
@@ -33,5 +32,10 @@ class MessagesWidget implements WidgetInterface
             throw $result;
         }
         return $result;
+    }
+
+    public function getOptions(): array
+    {
+        return [];
     }
 }

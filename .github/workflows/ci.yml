@@ -1,0 +1,44 @@
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        env:
+          # See version matrix @ https://typo3.org/cms/roadmap
+          - { php: 8.2, typo3: 12.4 }
+
+    env: ${{ matrix.env }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP Version
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.env.php }}
+          tools: composer:v2
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.composer/cache
+          key: dependencies-composer-${{ hashFiles('composer.json') }}
+
+      - name: Install composer dependencies
+        run: |
+          composer install
+
+      - name: Run PHPStan
+        run: composer phpstan
+
+      - name: Warmup typo3 cache
+        run: composer exec typo3 -- cache:warmup

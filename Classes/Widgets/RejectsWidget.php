@@ -20,8 +20,7 @@ class RejectsWidget implements WidgetInterface
         private ApiClient $apiClient,
         private string $table,
         private string $field
-    ) {
-    }
+    ) {}
 
     public function renderWidgetContent(): string
     {
@@ -46,7 +45,7 @@ class RejectsWidget implements WidgetInterface
         return $result;
     }
 
-    protected function addEditUri($items): array
+    protected function addEditUri(array $items): array
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable($this->table);
@@ -70,5 +69,10 @@ class RejectsWidget implements WidgetInterface
             }
         }
         return $items;
+    }
+
+    public function getOptions(): array
+    {
+        return [];
     }
 }
