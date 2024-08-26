@@ -12,6 +12,7 @@ jobs:
         env:
           # See version matrix @ https://typo3.org/cms/roadmap
           - { php: 8.2, typo3: 12.4 }
+          - { php: 8.3, typo3: 13.2 }
 
     env: ${{ matrix.env }}
 
@@ -35,7 +36,7 @@ jobs:
 
       - name: Install composer dependencies
         run: |
-          composer install
+          composer req typo3/cms-core:^${{ matrix.env.typo3 }} -W
 
       - name: Run PHPStan
         run: composer phpstan
